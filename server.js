@@ -12,22 +12,41 @@ dotenv.config({ path: "./config.env" });
 
 const app = require("./app");
 
-const requiredEnvVars = ["DATABASE", "DATABASE_PASSWORD", "JWT_SECRET"];
-const missingEnvVars = requiredEnvVars.filter(envVar => !process.env[envVar]);
+const getDatabaseUri = () => {
+  const databaseUri =
+    process.env.DATABASE || process.env.MONGODB_URI || process.env.DATABASE_URL;
+  const missingEnvVars = [];
+
+  if (!databaseUri) missingEnvVars.push("DATABASE");
+  if (!process.env.JWT_SECRET) missingEnvVars.push("JWT_SECRET");
+
+  if (databaseUri && databaseUri.includes("<db_password>")) {
+    if (!process.env.DATABASE_PASSWORD) {
+      missingEnvVars.push("DATABASE_PASSWORD");
+    }
+
+    return {
+      databaseUri: databaseUri.replace(
+        "<db_password>",
+        process.env.DATABASE_PASSWORD || "",
+      ),
+      missingEnvVars,
+    };
+  }
+
+  return { databaseUri, missingEnvVars };
+};
+
+const { databaseUri, missingEnvVars } = getDatabaseUri();
 
 if (missingEnvVars.length > 0) {
   console.error(
-    `Missing required environment variables: ${missingEnvVars.join(", ")}`
+    `Missing required environment variables: ${missingEnvVars.join(", ")}`,
   );
   process.exit(1);
 }
 
-const DB = process.env.DATABASE.replace(
-  "<db_password>",
-  process.env.DATABASE_PASSWORD,
-);
-
-mongoose.connect(DB).then(() => {
+mongoose.connect(databaseUri).then(() => {
   console.log("DB connected succesfully!");
 });
 

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Garcia Local Marketplace</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-page="products">
+  <canvas class="cosmos-canvas" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <a class="brand" href="/">Marketplace</a>
+    <button class="menu-button" type="button" data-menu-button aria-label="Open navigation">Menu</button>
+    <nav class="site-nav" data-site-nav aria-label="Main navigation">
+      <a href="/" data-nav-link="home">Home</a>
+      <a href="/products" data-nav-link="products">Products</a>
+      <a href="/stats" data-nav-link="stats">Stats</a>
+      <a href="/login" data-auth-link="login">Log In</a>
+      <a class="nav-button" href="/signup" data-auth-link="signup">Sign Up</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="page-heading">
+      <p class="kicker">Marketplace</p>
+      <h1>Browse Products</h1>
+      <p>Find listings from local sellers, then sign in to create, update, or delete products.</p>
+    </section>
+
+    <section class="tool-panel" aria-label="Product filters">
+      <div class="search-row">
+        <label class="sr-only" for="productSearch">Search products</label>
+        <input id="productSearch" class="search-input" type="search" placeholder="Search products..." data-product-search>
+        <button class="button button-cyan" type="button" data-open-product-modal>Add Product</button>
+      </div>
+
+      <div class="filter-group" aria-label="Browse by category">
+        <p class="filter-label">Browse by category</p>
+        <div class="chip-row" data-category-filters></div>
+      </div>
+
+      <div class="filter-row">
+        <label>
+          <span>Price range</span>
+          <select data-price-filter>
+            <option value="all">Any Price Range</option>
+            <option value="0-500">Below ₱500</option>
+            <option value="500-2000">₱500 to ₱2,000</option>
+            <option value="2000-10000">₱2,000 to ₱10,000</option>
+            <option value="10000-999999999">Above ₱10,000</option>
+          </select>
+        </label>
+        <label>
+          <span>Sort</span>
+          <select data-sort-filter>
+            <option value="newest">Newest first</option>
+            <option value="price-asc">Lowest price</option>
+            <option value="price-desc">Highest price</option>
+            <option value="name">Name A to Z</option>
+          </select>
+        </label>
+        <button class="button button-ghost" type="button" data-reset-filters>Reset Filters</button>
+      </div>
+    </section>
+
+    <p class="status-message" data-products-status>Loading products...</p>
+    <section class="product-grid" data-products-grid aria-label="Product listings"></section>
+  </main>
+
+  <div class="modal-backdrop" data-product-modal hidden>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+      <button class="close-button" type="button" data-close-product-modal aria-label="Close product form">Close</button>
+      <p class="kicker">Product form</p>
+      <h2 id="productModalTitle">Add Product</h2>
+      <form class="form-grid" data-product-form>
+        <input type="hidden" name="id" data-product-id>
+        <label>
+          <span>Product name</span>
+          <input name="name" type="text" maxlength="80" required>
+        </label>
+        <label>
+          <span>Price</span>
+          <input name="price" type="number" min="1" step="1" required>
+        </label>
+        <label>
+          <span>Category</span>
+          <input name="category" type="text" maxlength="40" required>
+        </label>
+        <label>
+          <span>Seller</span>
+          <input name="seller" type="text" maxlength="60" required>
+        </label>
+        <label class="span-2">
+          <span>Description</span>
+          <input name="description" type="text" maxlength="50" required>
+        </label>
+        <label class="span-2">
+          <span>Discount price</span>
+          <input name="priceDiscount" type="number" min="0" step="1">
+        </label>
+        <button class="button button-primary span-2" type="submit">Save Product</button>
+        <p class="form-message span-2" data-product-form-message role="status"></p>
+      </form>
+    </section>
+  </div>
+
+  <script src="/marketplace.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+[
+  {
+    "name": "Second-hand Laptop",
+    "price": 15000,
+    "category": "Electronics",
+    "description": "Good condition, 8GB RAM",
+    "seller": "Juan Dela Cruz",
+    "postedDate": "2024-01-05T00:00:00.000Z"
+  },
+  {
+    "name": "Pre-loved Denim Jacket",
+    "price": 500,
+    "category": "Clothes",
+    "description": "Thrifted Levis jacket, size Medium.",
+    "seller": "Maria Santos",
+    "postedDate": "2024-02-10T00:00:00.000Z"
+  },
+  {
+    "name": "Programming Textbook",
+    "price": 800,
+    "category": "Books",
+    "description": "Great for 1st-year IT students.",
+    "seller": "Alex Reyes",
+    "postedDate": "2024-03-01T00:00:00.000Z"
+  },
+  {
+    "name": "Homemade Peanut Butter",
+    "price": 150,
+    "category": "Food",
+    "description": "Organic, no preservatives, 500g.",
+    "seller": "Ate Susan",
+    "postedDate": "2024-04-12T00:00:00.000Z"
+  },
+  {
+    "name": "Mechanical Keyboard",
+    "price": 2500,
+    "category": "Electronics",
+    "description": "RGB backlit, Blue switches.",
+    "seller": "Kevin Lee",
+    "postedDate": "2024-01-20T00:00:00.000Z"
+  },
+  {
+    "name": "Vintage Film Camera",
+    "price": 4500,
+    "category": "Electronics",
+    "description": "35mm manual camera, working.",
+    "seller": "Berto Vlogs",
+    "postedDate": "2024-02-15T00:00:00.000Z",
+    "premiumProducts": true
+  },
+  {
+    "name": "Gaming Mouse",
+    "price": 1200,
+    "category": "Electronics",
+    "description": "High DPI, ergonomic design.",
+    "seller": "Tech Buddy",
+    "postedDate": "2024-03-05T00:00:00.000Z",
+    "priceDiscount": 900
+  },
+  {
+    "name": "Canvas Tote Bag",
+    "price": 200,
+    "category": "Clothes",
+    "description": "Eco-friendly and durable bag.",
+    "seller": "Green Shop",
+    "postedDate": "2024-04-01T00:00:00.000Z"
+  },
+  {
+    "name": "Cooking Oil 1L",
+    "price": 95,
+    "category": "Food",
+    "description": "Pure vegetable oil.",
+    "seller": "Sari-Sari Store",
+    "postedDate": "2024-04-18T00:00:00.000Z"
+  },
+  {
+    "name": "Leather Wallet",
+    "price": 600,
+    "category": "Clothes",
+    "description": "Genuine leather, slim design.",
+    "seller": "Classy Finds",
+    "postedDate": "2024-03-20T00:00:00.000Z"
+  },
+  {
+    "name": "Fiction Novel Paperback",
+    "price": 300,
+    "category": "Books",
+    "description": "Bestseller fiction book.",
+    "seller": "Alex Reyes",
+    "postedDate": "2024-03-10T00:00:00.000Z"
+  },
+  {
+    "name": "Basic Mousepad",
+    "price": 100,
+    "category": "Electronics",
+    "description": "Smooth black mousepad.",
+    "seller": "Tech Buddy",
+    "postedDate": "2024-04-15T00:00:00.000Z"
+  },
+  {
+    "name": "USB C Cable",
+    "price": 250,
+    "category": "Electronics",
+    "description": "1 meter fast charging cable.",
+    "seller": "Gadget Hub",
+    "postedDate": "2024-04-10T00:00:00.000Z"
+  },
+  {
+    "name": "Luxury Gold Watch",
+    "price": 50000,
+    "category": "Clothes",
+    "description": "18k gold plated.",
+    "seller": "Classy Finds",
+    "postedDate": "2024-01-10T00:00:00.000Z",
+    "premiumProducts": true
+  },
+  {
+    "name": "White Sneakers",
+    "price": 1200,
+    "category": "Clothes",
+    "description": "Size 10 minimal sneakers.",
+    "seller": "Shoe Store",
+    "postedDate": "2024-02-28T00:00:00.000Z",
+    "priceDiscount": 1000
+  }
+]

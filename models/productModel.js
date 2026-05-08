@@ -4,16 +4,22 @@ const productSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, "A product must have a name"],
+        minlength: [3, "A product name must have at least 3 characters"],
         unique: true, // Added to test duplicate database fields
         trim: true
     },
     price: {
         type: Number,
-        required: [true, "A product must have a price"]
+        required: [true, "A product must have a price"],
+        min: [1, "A product price must be at least 1"]
     },
     category: {
         type: String,
-        required: [true, "A product must have a category"]
+        required: [true, "A product must have a category"],
+        enum: {
+            values: ["Electronics", "Clothes", "Books", "Food", "Home", "Services", "Sports", "Others"],
+            message: "Category must be Electronics, Clothes, Books, Food, Home, Services, Sports, or Others"
+        }
     },
     description: {
         type: String,
@@ -22,7 +28,8 @@ const productSchema = new mongoose.Schema({
     },
     seller: {
         type: String,
-        required: [true, "A product must have a seller"]
+        required: [true, "A product must have a seller"],
+        minlength: [2, "A seller name must have at least 2 characters"]
     },
     postedDate: {
         type: Date,

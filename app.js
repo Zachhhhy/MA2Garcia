@@ -95,6 +95,7 @@ app.get(["/api", "/api/v1"], (req, res) => {
       users: {
         signup: "POST /api/v1/users/signup",
         login: "POST /api/v1/users/login",
+        currentUser: "GET /api/v1/users/me (requires login)",
         forgotPassword: "POST /api/v1/users/forgotPassword",
         resetPassword: "PATCH /api/v1/users/resetPassword/:token",
         updatePassword: "PATCH /api/v1/users/updateMyPassword",
